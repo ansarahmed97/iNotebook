@@ -8,6 +8,7 @@ import Alert from './components/Alert';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import { useState } from 'react';
+import process from 'process';
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -24,7 +25,7 @@ function App() {
   return (
     <>
       <NoteState>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Navbar />
           <Alert alert={alert} showAlert={showAlert} />
           <div className="container">
