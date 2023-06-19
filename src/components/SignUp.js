@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-
-
 const SignUp = (props) => {
     const [credentials, setCredentials] = useState({name: "",  email: "", password: ""})
     let navigate = useNavigate();
-
-
     const handleSubmit = async (e) => {
         e.preventDefault()
         const {name, email, password} = credentials;
@@ -33,7 +29,6 @@ const SignUp = (props) => {
         setCredentials({...credentials, [e.target.name]: e.target.value })
     }
     return (
-
         <div><form onSubmit={handleSubmit}>
             <div className="mb-3">
                 <label htmlFor="name" className="form-label">Name</label>
@@ -55,5 +50,4 @@ const SignUp = (props) => {
         </form></div>
     )
 }
-
 export default SignUp

@@ -3,12 +3,10 @@ import noteContext from '../context/notes/noteContext';
 import Noteitem from './Noteitem';
 import AddNote from './AddNote';
 import { useNavigate } from 'react-router-dom';
-
 const Notes = (props) => {
   const context = useContext(noteContext);
   let navigate = useNavigate();
   const { notes, getNotes, editNote } = context;
-
   useEffect(() => {
     if (localStorage.getItem('authToken')) {
       getNotes();
@@ -17,12 +15,9 @@ const Notes = (props) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   const [note, setNote] = useState({ id: '', etitle: '', edescription: '', etag: '' });
-
   const ref = useRef(null);
   const refClose = useRef(null);
-
   const updateNote = (currentNote) => {
     ref.current.click();
     setNote({
@@ -32,7 +27,6 @@ const Notes = (props) => {
       etag: currentNote.tag,
     });
   };
-
   const handleClick = () => {
     editNote(note.id, note.etitle, note.edescription, note.etag);
     refClose.current.click();
@@ -42,7 +36,6 @@ const Notes = (props) => {
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
-
   return (
     <>
       <AddNote showAlert={props.showAlert} />
@@ -92,5 +85,4 @@ const Notes = (props) => {
     </>
   );
 };
-
 export default Notes;

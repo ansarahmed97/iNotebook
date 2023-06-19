@@ -1,7 +1,5 @@
 const jwt = require('jsonwebtoken'); // Importing the jsonwebtoken package for token verification
-
 const JWT_SECRET = "ansarisgoodb$oy"; // Secret key used for token generation and verification
-
 const fetchuser= (req, res, next) => {
     // Get the user from jwt token and add id to req object
     const token = req.header('auth-token'); // Extract the token from the request headers
@@ -16,5 +14,4 @@ const fetchuser= (req, res, next) => {
         res.status(401).send({error: "Please authenticate using a valid token"}); // If token verification fails, send an error response
     }
 }
-
 module.exports = fetchuser; // Export the fetchuser middleware for use in other modules

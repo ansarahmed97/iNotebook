@@ -1,16 +1,13 @@
 import React, { useContext } from 'react';
 import NoteContext from '../context/notes/noteContext';
-
 const Noteitem = (props) => {
   const context = useContext(NoteContext);
   const { deleteNote } = context;
   const { note, updateNote } = props;
-
   const handleDeleteNote = () => {
     deleteNote(note._id);
     props.showAlert('Deleted successfully', 'success');
   };
-
   return (
     <div className="col-6 col-md-4 col-lg-3 col-xl-3">
       <div className="card my-3">
@@ -28,5 +25,4 @@ const Noteitem = (props) => {
     </div>
   );
 };
-
 export default Noteitem;

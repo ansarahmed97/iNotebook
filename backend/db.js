@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const mongoURI = "mongodb://127.0.0.1/inotebook";
-
 const connectToMongo = () => {
   mongoose.connect(mongoURI, {
     useNewUrlParser: true,
@@ -13,5 +12,4 @@ const connectToMongo = () => {
     console.error("Error connecting to MongoDB:", error);
   });
 };
-
 module.exports = connectToMongo;
