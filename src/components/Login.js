@@ -29,7 +29,7 @@ const Login = (props) => {
     <div>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">Email address</label>
+          <label htmlFor="email" className="form-label">Enter your Email address</label>
           <input type="email" className="form-control" id="email" onChange={onChange} value={credentials.email} name="email" aria-describedby="emailHelp" autoComplete="off" />
         </div>
         <div className="mb-3">
